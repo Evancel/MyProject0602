@@ -2,20 +2,18 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String middleName;
-    int department;
-    int salary;
+    private int department;
+    private int salary;
 
     int id;
-    private static int counterId = 1;
 
     public Employee(String lastName, String firstName, String middleName, int department, int salary){
-        this.id = counterId;
+        this.id = Main.counterId;
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
         this.department = department;
         this.salary = salary;
-        counterId+=1;
     }
     public int getId(){
         return id;
@@ -36,10 +34,7 @@ public class Employee {
         return salary;
     }
 
-    public static int getCounterId(){
-        return counterId;
-    }
-    public void setDepartment(int department){
+   public void setDepartment(int department){
         this.department = department;
     }
     public void setSalary(int salary){
@@ -54,5 +49,10 @@ public class Employee {
     public void printFIO(){
         System.out.println(lastName.toUpperCase() + " " + firstName.toUpperCase().charAt(0) + ". " +
                 middleName.toUpperCase().charAt(0) + ".");
+    }
+
+    public void printEmployeeWithoutDepartment(){
+        System.out.println(id + " " + lastName + " " + firstName + " " +
+                middleName + " " + salary);
     }
 }
