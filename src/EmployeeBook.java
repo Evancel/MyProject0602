@@ -1,19 +1,11 @@
 public class EmployeeBook {
     private Employee[] employee;
-    private int counterId = 1;
+  //  private int counterId = 1;
 
     private int size;
 
     public EmployeeBook(){
         this.employee = new Employee[10];
-    }
-
-    public int getCounterId(){
-        return counterId;
-    }
-
-    public int getSize(){
-        return size;
     }
 
     public void addEmployee(String lastName, String firstName, String middleName, int department, int salary){
@@ -22,9 +14,8 @@ public class EmployeeBook {
             return;
         }
 
-        Employee newEmployee = new Employee(counterId, lastName, firstName, middleName, department, salary);
+        Employee newEmployee = new Employee(lastName, firstName, middleName, department, salary);
         employee[size++] = newEmployee;
-        counterId++;
     }
 
     public void removeEmployee(String lastName, String firstName, String middleName, int department){

@@ -5,10 +5,12 @@ public class Employee {
     private int department;
     private int salary;
 
-    int id;
+    private static int counterId;
 
-    public Employee(int id, String lastName, String firstName, String middleName, int department, int salary){
-        this.id = id;
+    private final int id;
+
+    public Employee(String lastName, String firstName, String middleName, int department, int salary){
+        this.id = ++counterId;
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -46,18 +48,6 @@ public class Employee {
         return "Employee: id = " + id + ",LastName = " + lastName + ", FirstName = " + firstName +
                 ", MiddleName = " + middleName + ", Department = " + department + ", Salary = " + salary;
     }
-
-  /*  @Override
-   public boolean equals(Object other){
-        if(this.getClass() != other.getClass()){
-            return false;
-        }
-        Employee emp2 = (Employee) other;
-
-        return (this.getLastName()== emp2.getLastName() && this.getFirstName()== emp2.getFirstName()&&
-        this.getMiddleName()== emp2.getMiddleName());
-    }
-*/
 
     public void printFIO(){
         System.out.println(lastName.toUpperCase() + " " + firstName.toUpperCase().charAt(0) + ". " +
