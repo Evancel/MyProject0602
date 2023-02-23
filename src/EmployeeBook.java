@@ -33,15 +33,28 @@ public class EmployeeBook {
         }
     }
 
-    public void changeEmployee(String lastName, String firstName, String middleName, int value) {
+    //исходила из того, что вряд ли сотрудника переведут в другой департамент без изменения зп,
+    // а изменить зп без изменения департамента обычная практика.
+    public void changeEmployeeSalary(String lastName, String firstName, String middleName, int salary) {
         for (int i = 0; i < size; i++) {
             if (employee[i].getLastName().equals(lastName) &&
                     employee[i].getFirstName().equals(firstName) &&
                     employee[i].getMiddleName().equals(middleName)) {
-                if (value>0 && value <=5){
-                    employee[i].setDepartment(value);
-                } else {
-                    employee[i].setSalary(value);
+                    employee[i].setSalary(salary);
+            }
+        }
+    }
+
+    public void changeEmployeeDepartmentOrSalary(String lastName, String firstName, String middleName, int department, int salary) {
+        for (int i = 0; i < size; i++) {
+            if (employee[i].getLastName().equals(lastName) &&
+                    employee[i].getFirstName().equals(firstName) &&
+                    employee[i].getMiddleName().equals(middleName)) {
+                if (department!=0){
+                    employee[i].setDepartment(department);
+                }
+                if (salary!=0){
+                    employee[i].setSalary(salary);
                 }
             }
         }

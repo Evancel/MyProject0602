@@ -36,8 +36,9 @@ public class Main {
         employeeBook.removeEmployee("Кузьмин", "Андрей", "Андреевич", 4);
         employeeBook.addEmployee("Андреева","Екатерина","Дмитриевна",2,170000);
         employeeBook.removeEmployee("Андреева","Екатерина","Дмитриевна",2);
-        employeeBook.changeEmployee("Иванов","Иван","Иванович",3);
-        employeeBook.changeEmployee("Иванов","Иван","Иванович",187000);
+        employeeBook.changeEmployeeDepartmentOrSalary("Иванов","Иван","Иванович",3, 134000);
+        employeeBook.changeEmployeeDepartmentOrSalary("Петров","Петр","Петрович",1, 0);
+        employeeBook.changeEmployeeSalary("Иванов","Иван","Иванович",187000);
         employeeBook.printAllEmployeesByDepartment();
     }
 }
